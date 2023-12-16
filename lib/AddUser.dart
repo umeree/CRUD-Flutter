@@ -109,18 +109,3 @@ class _AddUserState extends State<AddUser> {
     );
   }
 }
-
-
-// dbHelper!
-//               .insert(UserModel(
-//                   name: "Ali",
-//                   description: "Hello I am Umer",
-//                   contact: "03069457225"))
-//               .then((value) {
-//             print("Data Added");
-//             setState(() {
-//               usersList = dbHelper!.getUsers();
-//             });
-//           }).onError((error, stackTrace) {
-//             print(error.toString());
-//           });
