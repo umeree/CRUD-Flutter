@@ -1,9 +1,11 @@
 import 'package:crud1/dbHandler.dart';
+import 'package:crud1/homeScreen.dart';
 import 'package:crud1/model.dart';
 import 'package:flutter/material.dart';
 
 class EditUser extends StatefulWidget {
-  const EditUser({super.key});
+  final int id;
+  const EditUser({super.key, required this.id});
 
   @override
   State<EditUser> createState() => _EditUserState();
@@ -76,9 +78,12 @@ class _EditUserState extends State<EditUser> {
             ElevatedButton(
                 onPressed: () {
                   dbHelper!.update(UserModel(
+                      id: widget.id,
                       name: nameController.text.toString(),
                       description: descriptionController.text.toString(),
                       contact: contactController.text.toString()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()));
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(100, 50),

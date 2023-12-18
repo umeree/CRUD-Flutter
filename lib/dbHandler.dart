@@ -24,7 +24,7 @@ class DatabaseHelper {
 
   _onCreate(Database db, int version) async {
     await db.execute(
-        "CREATE TABLE userInfo(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, description TEXT, contact TEXT)");
+        "CREATE TABLE userInfo(id INTEGER PRIMARY KEY, name TEXT, description TEXT, contact TEXT)");
   }
 
   Future<UserModel> insert(UserModel userModel) async {

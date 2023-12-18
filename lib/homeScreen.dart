@@ -73,13 +73,25 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 dbHelper!.update(UserModel(
                                                     id: snapshot
                                                         .data![index].id!,
-                                                    name: "Umer",
+                                                    name: snapshot
+                                                        .data![index].name,
                                                     description: "This is Umer",
                                                     contact: "0987654321"));
                                                 setState(() {
                                                   usersList =
                                                       dbHelper!.getUsers();
                                                 });
+
+                                                print(snapshot.data![index].id);
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            EditUser(
+                                                                id: snapshot
+                                                                    .data![
+                                                                        index]
+                                                                    .id!)));
                                               },
                                               icon: Icon(
                                                 Icons.edit,

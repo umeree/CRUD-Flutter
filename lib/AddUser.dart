@@ -1,4 +1,5 @@
 import 'package:crud1/dbHandler.dart';
+import 'package:crud1/homeScreen.dart';
 import 'package:crud1/model.dart';
 import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
@@ -93,6 +94,8 @@ class _AddUserState extends State<AddUser> {
                   nameController.text = "";
                   descriptionController.text = "";
                   contactController.text = "";
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()));
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(100, 50),
